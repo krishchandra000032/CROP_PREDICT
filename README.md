@@ -32,7 +32,7 @@ This web application predicts which crop is suitable based on weather conditions
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/crop-prediction.git
+   git clone 
 Install dependencies:
 pip install -r requirements.txt
 Run the Django development server:
