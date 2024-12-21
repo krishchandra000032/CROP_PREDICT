@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Prediction</title>
+</head>
+<body>
+    <h1>Enter Details for Crop Prediction</h1>
+    <form method="POST" action="/predict-crop/">
+        {% csrf_token %}
+        Area: <input type="text" name="temperature"><br>
+        Precipitation: <input type="text" name="rainfall"><br>
+        Temperature: <input type="text" name="Temperature"><br>
+        Humidity: <input type="text" name="Humidity"><br>
+        Soil_type:_chalky: <input type="text" name="soil_type"><br>
+        Soil_type:_clay: <input type="text" name="soil_type"><br>
+        Soil_type:_loamy: <input type="text" name="soil_type"><br>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
