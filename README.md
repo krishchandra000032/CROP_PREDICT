@@ -32,11 +32,11 @@ This web application predicts which crop is suitable based on weather conditions
 
 1. Clone this repository:
    ```bash
-   git clone 
+   git clone https://github.com/krishchandra000032/CROP_PREDICT.git
 Install dependencies:
 pip install -r requirements.txt
 Run the Django development server:
-python manage.py runserver
+python3 manage.py runserver
 Navigate to http://127.0.0.1:8000/predict/ to use the application.
 Deployment
 
