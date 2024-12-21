@@ -7,7 +7,8 @@ Now, you can test the application locally at ( http://127.0.0.1:8000/predict/ )
 Create a requirements.txt file to list all dependencies: 
 1.Run this command in terminal/powershell
 pip3 freeze > requirements.txt
-Deploy on Heroku:
+
+# Deploy on Heroku:
 Install Heroku CLI if you don’t have it.
 Log in to Heroku:
 heroku login
