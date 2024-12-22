@@ -4,28 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/hub_styles.css">
 </head>
 <body>
-    <div class="model-input">
-        <form method="post" action="http://localhost:5000/CropPredict/model">
-            <%const states = [            "AndhraPradesh",            "ArunachalPradesh",            "Assam",            "Bihar",            "Chhattisgarh",            "Goa",            "Gujarat",            "Haryana",            "HimachalPradesh",            "Jharkhand",            "Karnataka",            "Kerala",            "MadhyaPradesh",            "Maharashtra",            "Manipur",            "Mizoram",            "Nagaland",            "Odisha",            "Punjab",            "Rajasthan",            "Sikkim",            "Tamil Nadu",            "Telangana",            "Tripura",            "UttarPradesh",            "Uttarakhand",            "West Bengal"        ];%>
-            <%const uniqueSoilTypes = ["Alluvial", "Black", "Clay", "Laterite", "Loamy", "Peat", "Red", "Saline", "Sandy"]; %>
-            <select name="State">
-                <%for(state of states){%>
-                <option value="<%=state%>"><%=state%></option>
+    <div class="heroSection">
+        <a href="http://localhost:5000/CropPredict"><i class="fa-solid fa-house"></i></a>
+    </div>
+    <div class="hubBody">
+        
+        <div class="selector">
+            <form method="POST" action="http://localhost:5000/CropPredict/model">
+                <div class="random">
+                    <div class="select-container">
+                        <%const states = [            "AndhraPradesh",            "ArunachalPradesh",            "Assam",            "Bihar",            "Chhattisgarh",            "Goa",            "Gujarat",            "Haryana",            "HimachalPradesh",            "Jharkhand",            "Karnataka",            "Kerala",            "MadhyaPradesh",            "Maharashtra",            "Manipur",            "Mizoram",            "Nagaland",            "Odisha",            "Punjab",            "Rajasthan",            "Sikkim",            "Tamil Nadu",            "Telangana",            "Tripura",            "UttarPradesh",            "Uttarakhand",            "West Bengal"        ];%>
+                        <%const uniqueSoilTypes = ["Alluvial", "Black", "Clay", "Laterite", "Loamy", "Peat", "Red", "Saline", "Sandy"]; %>
+                        <select name="State" class="model-input">
+                            <%for(state of states){%>
+                            <option value="<%=state%>"><%=state%></option>
+                            <%}%>
+                        </select>
+                        <br>
+                        <input type="number" placeholder="Enter Rainfall" name="Rainfall" step="0.01" class="model-input">
+                        <br>
+                        <input type="number" placeholder="Enter pH" name="PH" step="0.01" class="model-input">
+                        <br>
+                        <input type="number" placeholder="Enter Temperature" name="Temperature" step="0.01" class="model-input">
+                        <br>
+                        <select name="Soil_type" class="model-input">
+                            <%for(soil of uniqueSoilTypes){%>
+                                <option value="<%=soil%>"><%=soil%></option>
+                            <%}%>
+                        </select>
+                    </div>
+                    <button class="submitBtn">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="Info">
+            <div class="cropInfo">
+                <%if(Crop){%>
+                <ul>
+                    <%for(let i = 0; i<1; i++){%>
+                    <li><div class="cropCard"><div class="title"> <b><%=Crop%></b></div> <br></div></li>
+                    <%}%>
+                </ul>
                 <%}%>
-            </select>
-            <input type="number" placeholder="Enter Rainfall" name="Rainfall" step="0.01">
-            <input type="number" placeholder="Enter pH" name="PH" step="0.01">
-            <input type="number" placeholder="Enter Temperature" name="Temperature" step="0.01">
-            <select name="Soil_type">
-                <%for(soil of uniqueSoilTypes){%>
-                    <option value="<%=soil%>"><%=soil%></option>
-                <%}%>
-            </select>
-            <button>Submit</button>
-        </form>
-        <h3>Predicted Crop: <%=Crop%></h3>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+
+
+
+<!-- http://localhost:5000/CropPredict/model -->

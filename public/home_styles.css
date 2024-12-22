@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+:root {
+    --Soft-Blue: hsl(231, 69%, 60%);
+    --Soft-Red: #fa5757;
+    --Grayish-Blue: hsl(229, 8%, 60%);
+    --Very-Dark-Blue: hsl(229, 31%, 21%);
+    --box-shadow: 0.5rem 0.5rem 0 hsl(231, 69%, 60%);
+    --text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+    --border: 0.2rem solid hsl(134, 61%, 41%);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.header {
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .navbar a {
+    margin-left: 2rem;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+
+.header .navbar a:hover {
+    color: var(--Soft-Red);
+}
+
+.header .navbar .btn {
+    padding: 0.6rem 3rem;
+    background-color: var(--Soft-Red);
+    color: #fff;
+    border-radius: 5rem;
+}
+
+.header .navbar .btn:hover {
+    color: var(--Soft-Red);
+    background-color: transparent;
+    border: 2px solid var(--Soft-Red);
+}
+
+#menu-btn {
+    padding: 1rem;
+    background-color: #eee;
+    font-size: 3rem;
+    color: var(--Soft-Blue);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 7rem;
+}
+
+.home .content {
+    text-align: center;
+    z-index: 1;
+}
+
+.home h1 {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    color: var(--Very-Dark-Blue);
+}
+
+.home p {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--Grayish-Blue);
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: var(--Soft-Blue);
+    color: #fff;
+    border-radius: 5rem;
+    transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+    background-color: #2980b9;
+}
+
+.home .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.home .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.features {
+    padding: 5rem 9%;
+}
+
+.features .heading {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.features .heading h1 {
+    font-size: 3rem;
+    color: var(--Very-Dark-Blue);
+    margin-bottom: 1.5rem;
+}
+
+.features .heading p {
+    font-size: 1.6rem;
+    color: var(--Grayish-Blue);
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.features .row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.features .row .image,
+.features .row .content {
+    flex: 1;
+}
+
+.features .row .image img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.features .row .content h1 {
+    font-size: 2.5rem;
+    color: var(--Very-Dark-Blue);
+    margin-bottom: 1.5rem;
+}
+
+.features .row .content p {
+    font-size: 1.6rem;
+    color: var(--Grayish-Blue);
+    margin-bottom: 2rem;
+}
+
+.all-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    background-color: var(--Soft-Blue);
+    color: #fff;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.all-btn:hover {
+    background-color: transparent;
+    color: var(--Soft-Blue);
+    border: 2px solid var(--Soft-Blue);
+}
+
+.profile-cards {
+    margin-top: 6rem;
+}
+
+.profile-cards h2 {
+    font-size: 3rem;
+    color: var(--Very-Dark-Blue);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 25rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-0.5rem);
+}
+
+.profile-image {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+.profile-card h3 {
+    font-size: 2rem;
+    color: var(--Very-Dark-Blue);
+    margin-bottom: 1rem;
+}
+
+.profile-card p {
+    font-size: 1.4rem;
+    color: var(--Grayish-Blue);
+    margin-bottom: 0.5rem;
+}
+
+.footer {
+    background-color: #f7f7f7;
+    padding: 5rem 9%;
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 2rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--Very-Dark-Blue);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--Grayish-Blue);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i {
+    padding-right: 0.5rem;
+    color: var(--Soft-Blue);
+}
+
+.footer .credit {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    color: var(--Very-Dark-Blue);
+}
+
+.footer .credit span {
+    color: var(--Soft-Red);
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: block;
+    }
+    .header .navbar {
+        position: absolute;
+        top: 110%;
+        right: 2rem;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: 0.5rem;
+        background: #fff;
+        transform: scale(0);
+        transform-origin: top right;
+        opacity: 0;
+        transition: 0.2s ease-in-out;
+    }
+    .header .navbar.active {
+        transform: scale(1);
+        opacity: 1;
+    }
+    .header .navbar a {
+        font-size: 2rem;
+        display: block;
+        margin: 2.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}

@@ -17,6 +17,10 @@ app.set("views", path.join(__dirname, "views"));
 // path for serving static files
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get('/CropPredict',(req,res)=>{
+    res.render("home.ejs");
+})
+
 app.post('/CropPredict/model', (req,res)=>{
     const state = req.body.State;
     const rainfall = parseFloat(req.body.Rainfall);
@@ -52,7 +56,7 @@ app.post('/CropPredict/model', (req,res)=>{
         } else {
             console.log('Final result from Python:', result);
             // res.send(result.trim());
-            res.redirect("/CropPredict");
+            res.redirect("/CropPredict/model");
         }
     });
 
@@ -62,16 +66,9 @@ app.post('/CropPredict/model', (req,res)=>{
     });
 });
 
-app.get('/CropPredict', (req, res)=>{  // req.body is empty so add if-else (if req.body empty then Crop:"" else Crop:result)
-    // if(Object.keys(req.body).length === 0 && req.body.constructor === Object && result == ''){
-    //     res.render("index.ejs", {Crop: ""});
-    // } else {
-    //     res.render("index.ejs", {Crop: result});
-    // }
-    // console.log(result);
+app.get('/CropPredict/model', (req, res)=>{
     res.render("index.ejs", {Crop: result});
 });
-
 // app.post('/CropPredict', (req, res)=>{
 //     res.render("index.ejs", {Crop : "Wheat"});
 // });
