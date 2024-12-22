@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="model-input">
+        <form method="post" action="http://localhost:5000/CropPredict/model">
+            <%const states = [            "AndhraPradesh",            "ArunachalPradesh",            "Assam",            "Bihar",            "Chhattisgarh",            "Goa",            "Gujarat",            "Haryana",            "HimachalPradesh",            "Jharkhand",            "Karnataka",            "Kerala",            "MadhyaPradesh",            "Maharashtra",            "Manipur",            "Mizoram",            "Nagaland",            "Odisha",            "Punjab",            "Rajasthan",            "Sikkim",            "Tamil Nadu",            "Telangana",            "Tripura",            "UttarPradesh",            "Uttarakhand",            "West Bengal"        ];%>
+            <%const uniqueSoilTypes = ["Alluvial", "Black", "Clay", "Laterite", "Loamy", "Peat", "Red", "Saline", "Sandy"]; %>
+            <select name="State">
+                <%for(state of states){%>
+                <option value="<%=state%>"><%=state%></option>
+                <%}%>
+            </select>
+            <input type="number" placeholder="Enter Rainfall" name="Rainfall" step="0.01">
+            <input type="number" placeholder="Enter pH" name="PH" step="0.01">
+            <input type="number" placeholder="Enter Temperature" name="Temperature" step="0.01">
+            <select name="Soil_type">
+                <%for(soil of uniqueSoilTypes){%>
+                    <option value="<%=soil%>"><%=soil%></option>
+                <%}%>
+            </select>
+            <button>Submit</button>
+        </form>
+        <h3>Predicted Crop: <%=Crop%></h3>
+    </div>
+</body>
+</html>
